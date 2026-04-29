@@ -3,8 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <title>Military Store | Каталог</title>
+    <style>
+        #merch-trigger {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+        }
+
+        #merch-tab {
+            background: #8b2be2;
+            color: white;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            padding: 14px 8px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            user-select: none;
+            font-family: sans-serif;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+        #merch-tab:hover { background: #a044f5; }
+
+        #merch-banner {
+            width: 200px;
+            border-radius: 14px 0 0 14px;
+            overflow: hidden;
+            box-shadow: -6px 0 30px rgba(139,43,226,0.5);
+            max-width: 0;
+            opacity: 0;
+            transition: max-width 0.5s cubic-bezier(0.22,1,0.36,1), opacity 0.4s ease;
+        }
+
+        #merch-trigger:hover #merch-banner {
+            max-width: 200px;
+            opacity: 1;
+            animation: glowPulse 2s infinite;
+        }
+
+        #merch-banner a { display: block; }
+        #merch-banner img { display: block; width: 200px; height: auto; }
+
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: -6px 0 20px rgba(139,43,226,0.4); }
+            50%       { box-shadow: -6px 0 40px rgba(139,43,226,0.9); }
+        }
+    </style>
 </head>
 <body style="margin: 0; background: #1a1a1a; color: white; font-family: sans-serif; padding-bottom: 50px;">
+
+    <!-- БАНЕР MERCH SHOP -->
+    <div id="merch-trigger">
+        <div id="merch-banner">
+            <a href="https://crisswen.github.io/" target="_blank">
+                <img src="banner.png" alt="Merch Shop">
+            </a>
+        </div>
+        <div id="merch-tab">Merch Shop</div>
+    </div>
 
     <div style="background: #111; border-bottom: 2px solid #4b5320; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000;">
         <div style="font-weight: bold; color: #4b5320; font-size: 20px; letter-spacing: 2px;">MILITARY STORE</div>
@@ -13,7 +78,7 @@
             <a href="#" style="color: #888; text-decoration: none; font-size: 14px; text-transform: uppercase;">Доставка</a>
             <a href="#" style="color: #888; text-decoration: none; font-size: 14px; text-transform: uppercase;">Про нас</a>
         </div>
-            </div>
+    </div>
 
     <h1 style="text-align: center; padding: 40px; color: #4b5320; text-transform: uppercase; letter-spacing: 2px;">
         Мій магазин військового одягу
@@ -99,43 +164,42 @@
         </div>
 
         <div style="border: 2px solid #4b5320; padding: 20px; border-radius: 12px; width: 300px; background: rgba(255,255,255,0.05); display: flex; flex-direction: column;">
-    <img src="4.avif" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
-    <h2 style="margin: 0 0 10px 0; font-size: 18px;">Термобілизна Level 1</h2>
-    <ul style="padding-left: 20px; font-size: 13px; flex-grow: 1;">
-        <li>Комплект (верх+низ)</li>
-        <li>Відводить вологу</li>
-        <li>Плоскі шви</li>
-    </ul>
-    <p style="font-size: 20px; font-weight: bold; color: #4b5320; margin: 10px 0;">1 250 грн</p>
-    <button style="background: #4b5320; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: auto;">Купити</button>
-</div>
-</div> <div style="background: #111; border-top: 2px solid #4b5320; padding: 40px 20px; margin-top: 60px; text-align: center; width: 100%;">
-        
+            <img src="4.avif" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+            <h2 style="margin: 0 0 10px 0; font-size: 18px;">Термобілизна Level 1</h2>
+            <ul style="padding-left: 20px; font-size: 13px; flex-grow: 1;">
+                <li>Комплект (верх+низ)</li>
+                <li>Відводить вологу</li>
+                <li>Плоскі шви</li>
+            </ul>
+            <p style="font-size: 20px; font-weight: bold; color: #4b5320; margin: 10px 0;">1 250 грн</p>
+            <button style="background: #4b5320; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: auto;">Купити</button>
+        </div>
+
+    </div>
+
+    <div style="background: #111; border-top: 2px solid #4b5320; padding: 40px 20px; margin-top: 60px; text-align: center; width: 100%;">
         <h3 style="color: #4b5320; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;">Зв'язок з нами</h3>
-        
         <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
             <p style="margin: 0;">
                 Email: <a href="mailto:melnyk.anton.p811@kfccte-nau.ukr.education" style="color: white; text-decoration: none; border-bottom: 1px dashed #4b5320;">melnyk.anton.p811@kfccte-nau.ukr.education</a>
             </p>
-            
             <p style="margin: 0; color: #888;">Локація: Київ, Україна</p>
         </div>
-
         <div style="margin-top: 40px; font-size: 12px; color: #444; text-transform: uppercase; letter-spacing: 1px;">
             &copy; 2026 MILITARY STORE. ВСІ ПРАВА ЗАХИЩЕНІ.
         </div>
     </div>
-</body>
-<script>
-    
-   document.querySelectorAll('button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const alert = document.getElementById('success-alert');
-            if(alert) {
-                alert.style.display = 'block';
-                setTimeout(() => { alert.style.display = 'none'; }, 3000);
-            }
+
+    <script>
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const alert = document.getElementById('success-alert');
+                if (alert) {
+                    alert.style.display = 'block';
+                    setTimeout(() => { alert.style.display = 'none'; }, 3000);
+                }
+            });
         });
-    });
-</script>
+    </script>
+</body>
 </html>
